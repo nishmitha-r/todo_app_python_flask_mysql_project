@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToDo List</title>
+    </head>
+    <body>
+        <h1>ToDo List</h1>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                {{ task[1] }}
+                <a href="/delete/{{ task[0] }}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="/add" method="post">
+            <input type="text" name="task" placeholder="Enter a new task">
+            <input type="submit" value="Add">
+        </form>
+    </body>
+</html>
